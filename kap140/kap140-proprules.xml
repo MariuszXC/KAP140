@@ -48,7 +48,7 @@ We have captured the localizer and the GS.
 
 <PropertyList include="kap140-config.xml">
 
-<!-- Servos failure mapping for failure-manager-->
+    <!-- Servos failure mapping for failure-manager-->
     <logic>
         <input>
             <and>
@@ -104,7 +104,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/pitch-axis-fail</output>
     </logic>
 
-<!-- Detect servo movement -->
+    <!-- Detect servo movement -->
     <filter>
         <type>derivative</type>
         <gain>100</gain>
@@ -138,8 +138,8 @@ We have captured the localizer and the GS.
         <filter-time>0.5</filter-time>
     </filter>
 
-<!-- Detect excess g forces (c182s POH p. S15-6); disconnect AP. -->
-<!-- (Note: we want to filter short bursts that can occur during turbolences) -->
+    <!-- Detect excess g forces (c182s POH p. S15-6); disconnect AP. -->
+    <!-- (Note: we want to filter short bursts that can occur during turbulences) -->
     <logic>
         <input>
             <or>
@@ -166,7 +166,7 @@ We have captured the localizer and the GS.
         <output> <property>autopilot/kap140/sensors/excess-g</property> </output>
     </flipflop>
 
-<!-- Detect inoperable turn-indicator -->
+    <!-- Detect inoperable turn-indicator -->
     <logic>
         <input>
             <and>
@@ -180,8 +180,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/sensors/turn-indicator-operable</output>
     </logic>
 
-<!-- servo check -->
-
+    <!-- servo check -->
     <filter>
         <name>set roll servo check</name>
         <type>gain</type>
@@ -292,7 +291,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/servo/pitch-servo/check-timer</output>
     </filter>
 
-<!-- reset all if the AP has no power -->
+    <!-- reset all if the AP has no power -->
     <filter>
         <name>unpowered</name>
         <type>gain</type>
@@ -349,7 +348,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/servo/pitch-servo/check-timer</output>
     </filter>
 
-<!-- reset default altitude if the AP has no power -->
+    <!-- reset default altitude if the AP has no power -->
     <filter>
         <name>default-altitude</name>
         <type>gain</type>
@@ -363,7 +362,7 @@ We have captured the localizer and the GS.
         <output>autopilot/internal/target-altitude</output>
     </filter>
 
-<!-- reset default baro setting if the AP has no power and is not tied -->
+    <!-- reset default baro setting if the AP has no power and is not tied -->
     <filter>
         <name>default-inhg</name>
         <type>gain</type>
@@ -378,7 +377,7 @@ We have captured the localizer and the GS.
         <output alias="/params/baro-inhg"/>
     </filter>
 
-<!-- start the Pre-Flight-Test if the AP receive enough powered -->
+    <!-- start the Pre-Flight-Test if the AP receive enough powered -->
     <filter>
         <name>powered</name>
         <type>gain</type>
@@ -401,7 +400,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/powered</output>
     </filter>
 
-<!-- control conditions for every PFT stage -->
+    <!-- control conditions for every PFT stage -->
     <filter>
         <name>bad-condition</name>
         <type>gain</type>
@@ -456,7 +455,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/bad-condition</output>
     </filter>
 
-<!-- PFT stage 1 -->
+    <!-- PFT stage 1 -->
     <filter>
         <name>state1-timer</name>
         <type>gain</type>
@@ -523,7 +522,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/panel/state</output>
     </filter>
 
-<!-- PFT stage 2 -->
+    <!-- PFT stage 2 -->
     <filter>
         <name>state2-timer</name>
         <type>gain</type>
@@ -594,7 +593,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/panel/state</output>
     </filter>
 
-<!-- PFT stage 3 -->
+    <!-- PFT stage 3 -->
     <filter>
         <name>state3-timer</name>
         <type>gain</type>
@@ -665,7 +664,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/panel/state</output>
     </filter>
 
-<!-- PFT finish ; decide if the AP is usable and need baro settings (untied) or not (tied) -->
+    <!-- PFT finish ; decide if the AP is usable and need baro settings (untied) or not (tied) -->
     <filter>
         <name>state4-5</name>
         <type>gain</type>
@@ -702,7 +701,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/panel/state</output>
     </filter>
 
-<!-- PFT finish ; decide if the AP is usable and need baro settings (untied) or not (tied) -->
+    <!-- PFT finish ; decide if the AP is usable and need baro settings (untied) or not (tied) -->
     <filter>
         <name>state5</name>
         <type>gain</type>
@@ -727,7 +726,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/panel/state</output>
     </filter>
 
-<!-- set FPM timer while approaching preselected altitude -->
+    <!-- set FPM timer while approaching preselected altitude -->
     <filter>
         <name>display FPM while closing to preselected altitude</name>
         <debug>false</debug>
@@ -772,7 +771,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/panel/fpm-timer</output>
     </filter>
 
-<!-- reset FPM timer if we captured the altitude -->
+    <!-- reset FPM timer if we captured the altitude -->
     <filter>
         <name>display FPM while closing to preselected altitude</name>
         <debug>false</debug>
@@ -789,7 +788,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/panel/fpm-timer</output>
     </filter>
 
-<!-- decide what the digit will show up -->
+    <!-- decide what the digit will show up -->
     <filter>
         <name>digit-mode</name>
         <type>gain</type>
@@ -889,7 +888,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/panel/digit-mode</output>
     </filter>
 
-<!-- control the digit timer -->
+    <!-- control the digit timer -->
     <filter>
         <name>set digit-timer</name>
         <type>gain</type>
@@ -930,7 +929,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/panel/digit-timer</output>
     </filter>
 
-<!-- control the digit display on Pre-Flight-Test -->
+    <!-- control the digit display on Pre-Flight-Test -->
     <filter>
         <name>pft digit</name>
         <type>gain</type>
@@ -958,7 +957,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/panel/digit</output>
     </filter>
 
-<!-- what should the digit display show -->
+    <!-- what should the digit display show -->
     <filter>
         <name>normal digit</name>
         <type>gain</type>
@@ -1030,7 +1029,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/panel/digit</output>
     </filter>
 
-<!-- switch AP between ON/STBY -->
+    <!-- switch AP between ON/STBY -->
     <filter>
         <name>AP on</name>
         <type>gain</type>
@@ -1173,8 +1172,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/sensors/pitch-down</output>
     </filter>
 
-<!-- disengage via ap-disc -->
-
+    <!-- disengage via ap-disc -->
     <filter>
         <name>clear ap-disc</name>
         <type>gain</type>
@@ -1235,7 +1233,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/panel/ap-timer</output>
     </filter>
 
-<!-- set default lateral mode at AP activation -->
+    <!-- set default lateral mode at AP activation -->
     <filter>
         <name>lateral mode</name>
         <type>gain</type>
@@ -1256,7 +1254,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/settings/lateral-mode</output>
     </filter>
 
-<!-- take over FPM at AP activation -->
+    <!-- take over FPM at AP activation -->
     <filter>
         <name>set FPM</name>
         <type>gain</type>
@@ -1281,7 +1279,7 @@ We have captured the localizer and the GS.
         <output>autopilot/internal/target-climb-rate</output>
     </filter>
 
-<!-- set default vertical mode at AP activation -->
+    <!-- set default vertical mode at AP activation -->
     <filter>
         <name>vertical mode</name>
         <type>gain</type>
@@ -1306,7 +1304,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/settings/vertical-mode</output>
     </filter>
 
-<!-- reset modes if AP is STBY -->
+    <!-- reset modes if AP is STBY -->
     <filter>
         <name>init</name>
         <type>gain</type>
@@ -1330,7 +1328,7 @@ We have captured the localizer and the GS.
         <output>autopilot/internal/target-pressure</output>
     </filter>
 
-<!-- reset targets in ROLL mode -->
+    <!-- reset targets in ROLL mode -->
     <filter>
         <name>init</name>
         <type>gain</type>
@@ -1348,7 +1346,7 @@ We have captured the localizer and the GS.
         <output>autopilot/internal/target-roll-deg</output>
     </filter>
 
-<!-- set the FPM timer -->
+    <!-- set the FPM timer -->
     <filter>
         <name>FPM display</name>
         <type>gain</type>
@@ -1375,7 +1373,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/panel/fpm-timer</output>
     </filter>
 
-<!--- clear the FPM timer -->
+    <!--- clear the FPM timer -->
     <filter>
         <name>stop fpm-timer</name>
         <type>gain</type>
@@ -1405,7 +1403,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/panel/fpm-timer</output>
     </filter>
 
-<!-- FPM setting -->
+    <!-- FPM setting -->
     <filter>
         <name>FPM up</name>
         <type>gain</type>
@@ -1490,7 +1488,7 @@ We have captured the localizer and the GS.
         <max>2000</max>
     </filter>
 
-<!-- Altitude Capture (ALT ARM) -->
+    <!-- Altitude Capture (ALT ARM) -->
     <filter>
         <name>slow down FPM while approaching ALT</name>
         <debug>false</debug>
@@ -1564,7 +1562,7 @@ We have captured the localizer and the GS.
         <output>autopilot/internal/target-climb-rate</output>
     </filter>
 
-<!-- reference altitude -->
+    <!-- reference altitude -->
     <filter>
         <name>reference altitude up</name>
         <type>gain</type>
@@ -1631,7 +1629,7 @@ We have captured the localizer and the GS.
         <output>autopilot/internal/target-climb-rate</output>
     </filter>
 
-<!-- take over actual climb rare if we are in VS and CWS is active -->
+    <!-- take over actual climb rare if we are in VS and CWS is active -->
     <filter>
         <name>CWS target-climb-rate</name>
         <type>gain</type>
@@ -1653,7 +1651,7 @@ We have captured the localizer and the GS.
         <output>autopilot/internal/target-climb-rate</output>
     </filter>
 
-<!-- reset target climb rate if UP/DN buttons are not pressed and we are in ALT-HOLD mode
+    <!-- reset target climb rate if UP/DN buttons are not pressed and we are in ALT-HOLD mode
     <filter>
         <name>ALT reset climb rate</name>
         <type>gain</type>
@@ -1681,9 +1679,9 @@ We have captured the localizer and the GS.
         <input><value>0</value></input>
         <output>autopilot/internal/target-climb-rate</output>
     </filter>
- -->
+    -->
 
-<!-- set rounded FPM to next 100 ft -->
+    <!-- set rounded FPM to next 100 ft -->
     <filter>
         <name>round target-climb-rate</name>
         <type>gain</type>
@@ -1731,7 +1729,7 @@ We have captured the localizer and the GS.
         <output>autopilot/internal/target-climb-rate</output>
     </filter>
 
-<!-- take over actual pressure if we are in ALT and CWS is active -->
+    <!-- take over actual pressure if we are in ALT and CWS is active -->
     <filter>
         <name>CWS target-pressure</name>
         <type>gain</type>
@@ -1755,7 +1753,7 @@ We have captured the localizer and the GS.
         <output>autopilot/internal/target-pressure</output>
     </filter>
 
-<!-- control the BARO timer -->
+    <!-- control the BARO timer -->
     <filter>
         <name>set baro-timer</name>
         <type>gain</type>
@@ -1784,7 +1782,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/panel/baro-timer</output>
     </filter>
 
-<!-- switch BARO between InHg/hPa -->
+    <!-- switch BARO between InHg/hPa -->
     <filter>
         <name>BARO mode</name>
         <type>gain</type>
@@ -1853,7 +1851,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/panel/hdg-timer</output>
     </filter>
 
-<!-- trigger NAV/APR/REV -->
+    <!-- trigger NAV/APR/REV -->
     <filter>
         <name>nav-beam capture</name>
         <type>gain</type>
@@ -1997,7 +1995,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/settings/lateral-mode</output>
     </filter>
 
-<!-- set NAV/APR/REV -->
+    <!-- set NAV/APR/REV -->
     <filter>
         <name>set lateral mode</name>
         <type>gain</type>
@@ -2025,7 +2023,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/settings/lateral-mode</output>
     </filter>
 
-<!-- arm GS -->
+    <!-- arm GS -->
     <filter>
         <name>set GS-arm</name>
         <type>gain</type>
@@ -2055,7 +2053,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/settings/lateral-arm</output>
     </filter>
 
-<!-- disarm GS -->
+    <!-- disarm GS -->
     <filter>
         <name>clear GS-arm</name>
         <type>gain</type>
@@ -2092,7 +2090,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/settings/lateral-arm</output>
     </filter>
 
-<!-- clear lateral arm -->
+    <!-- clear lateral arm -->
     <filter>
         <name>clear lateral arm</name>
         <type>gain</type>
@@ -2118,7 +2116,7 @@ We have captured the localizer and the GS.
         <output>autopilot/internal/target-roll-deg</output>
     </filter>
 
-<!-- capture GS -->
+    <!-- capture GS -->
     <filter>
         <name>capture GS</name>
         <type>gain</type>
@@ -2215,7 +2213,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/settings/vertical-mode</output>
     </filter>
 
-<!-- clear GS-arm and target pressure -->
+    <!-- clear GS-arm and target pressure -->
     <filter>
         <name>clear GS-arm</name>
         <type>gain</type>
@@ -2237,7 +2235,7 @@ We have captured the localizer and the GS.
         <output>autopilot/internal/target-pressure</output>
     </filter>
 
-<!-- set target-pressure -->
+    <!-- set target-pressure -->
     <filter>
         <name>set target-pressure</name>
         <debug>false</debug>
@@ -2271,7 +2269,7 @@ We have captured the localizer and the GS.
         <output>autopilot/internal/target-pressure</output>
     </filter>
 
-<!-- signal ALT capture -->
+    <!-- signal ALT capture -->
     <filter>
         <name>capture ALT</name>
         <debug>false</debug>
@@ -2296,7 +2294,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/settings/vertical-arm</output>
     </filter>
 
-<!-- set ALT -->
+    <!-- set ALT -->
     <filter>
         <name>set ALT</name>
         <debug>false</debug>
@@ -2313,7 +2311,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/settings/vertical-mode</output>
     </filter>
 
-<!-- clear ALT-arm -->
+    <!-- clear ALT-arm -->
     <filter>
         <name>clear ALT-arm</name>
         <debug>false</debug>
@@ -2334,7 +2332,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/settings/vertical-arm</output>
     </filter>
 
-<!-- fallback to VS -->
+    <!-- fallback to VS -->
     <filter>
         <name>fallback to VS</name>
         <debug>false</debug>
@@ -2355,8 +2353,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/settings/vertical-mode</output>
     </filter>
 
-<!-- altitude alerter -->
-
+    <!-- altitude alerter -->
     <filter>
         <name>approaching 1000ft from preselected altitude</name>
         <debug>false</debug>
@@ -2560,8 +2557,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/panel/alt-alert-sound</output>
     </filter>
 
-<!-- Pitch Trim (PT) -->
-
+    <!-- Pitch Trim (PT) -->
     <filter>
         <name>set pitch up</name>
         <debug>false</debug>
@@ -2699,8 +2695,7 @@ We have captured the localizer and the GS.
         <output>autopilot/kap140/sensors/elevator-trim</output>
     </filter>
 
-<!-- pitch trim run-away -->
-
+    <!-- pitch trim run-away -->
     <filter>
         <name>check pitch trim run-away</name>
         <debug>false</debug>
@@ -2782,7 +2777,6 @@ We have captured the localizer and the GS.
 
     <!-- Logic by Josh Davidson (Octal450) 2021 -->
     <!-- Makes the conditions way simpler in the control system, easier to understand -->
-
     <logic>
         <input>
             <equals>
