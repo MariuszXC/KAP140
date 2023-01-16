@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- this params configure from where the values come from -->
+<!-- these params configure from where the values come from -->
+<!-- Examples are given for NAV, RNAV and GPS data sources  -->
 
 <PropertyList>
 
     <params>
-<!-- NAV source values -->
+        
+        <!-- NAV source example -->
         <source1-in-range>instrumentation/nav[0]/in-range</source1-in-range>
         <source1-from-flag>instrumentation/nav[0]/from-flag</source1-from-flag>
         <source1-to-flag>instrumentation/nav[0]/to-flag</source1-to-flag>
@@ -21,7 +23,7 @@
         <source1-selected-radial-deg>instrumentation/nav[0]/radials/selected-deg</source1-selected-radial-deg>
         <source1-target-radial-deg>instrumentation/nav[0]/radials/target-radial-deg</source1-target-radial-deg>
 
-<!-- RNAV source values -->
+        <!-- RNAV source example -->
         <source2-in-range>instrumentation/nav[1]/in-range</source2-in-range>
         <source2-from-flag>instrumentation/nav[1]/from-flag</source2-from-flag>
         <source2-to-flag>instrumentation/nav[1]/to-flag</source2-to-flag>
@@ -37,7 +39,7 @@
         <source2-selected-radial-deg>instrumentation/nav[1]/radials/selected-deg</source2-selected-radial-deg>
         <source2-target-radial-deg>instrumentation/nav[1]/radials/target-radial-deg</source2-target-radial-deg>
 
-<!-- GPS source values -->
+        <!-- GPS source example -->
         <source3-in-range>instrumentation/gps/wp/wp[1]/valid</source3-in-range>
         <source3-from-flag>instrumentation/gps/from-flag</source3-from-flag>
         <source3-to-flag>instrumentation/gps/to-flag</source3-to-flag>
