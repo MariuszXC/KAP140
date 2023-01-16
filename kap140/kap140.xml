@@ -15,6 +15,7 @@
      adjusting them, toggling them, or swaping them with other
      properties' values.
 -->
+
 <PropertyList include="kap140-config.xml">
 
   <name>KAP140TwoAxisAlt</name>
@@ -314,7 +315,7 @@
     </condition>
   </animation>
 
-<!-- not in use -->
+  <!-- not in use -->
   <animation>
     <type>select</type>
     <object-name>ann-yd</object-name>
@@ -326,9 +327,9 @@
     </condition>
   </animation>
 
-<!-- activ annun -->
+  <!-- activ annun -->
 
-<!-- digits -->
+  <!-- digits -->
   <animation>
     <type>textranslate</type>
     <object-name>ann-digit1</object-name>
@@ -543,7 +544,7 @@
     </condition>
   </animation>
 
-<!-- pre-flight-test -->
+  <!-- pre-flight-test -->
   <animation>
     <type>select</type>
     <name>PFT Annunciator</name>
@@ -643,7 +644,7 @@
     </condition>
   </animation>
 
-<!-- mode1 -->
+  <!-- mode1 -->
   <animation>
     <type>select</type>
     <object-name>ann-mode1-ap</object-name>
@@ -844,7 +845,7 @@
     </condition>
   </animation>
 
-<!-- arm1 -->
+  <!-- arm1 -->
 
   <animation>
     <type>select</type>
@@ -906,8 +907,7 @@
     </condition>
   </animation>
 
-<!-- mode2 -->
-
+  <!-- mode2 -->
   <animation>
     <type>select</type>
     <object-name>ann-mode2-vs</object-name>
@@ -981,8 +981,7 @@
     </condition>
   </animation>
 
-<!-- arm2 -->
-
+  <!-- arm2 -->
   <animation>
     <type>select</type>
     <object-name>ann-arm2</object-name>
@@ -996,8 +995,7 @@
     </condition>
   </animation>
 
-<!-- pt -->
-
+  <!-- pt -->
   <animation>
     <type>select</type>
     <object-name>ann-pt</object-name>
@@ -1157,7 +1155,6 @@
   </animation>
 
   <!-- alt alerter -->
-
   <animation>
     <type>select</type>
     <object-name>ann-alt-alert</object-name>
